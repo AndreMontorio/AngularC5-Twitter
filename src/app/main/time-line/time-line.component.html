@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-1"></div>
   <div id="foto" class="col-3">
-    teste 
+    teste
   </div>
   <div id="feed" class="col-4">
     <form (submit)="onSubmit()">
       <div class="form-group">
         <label for="exampleFormControlTextarea1">O que está pensando?</label>
-        <input class="form-control" #txtTexto [(ngModel)]="dataSource.Texto" rows="3"></input>
+        <input class="form-control" #txtTexto [(ngModel)]="dataSource.Texto" rows="3" [ngModelOptions]="{standalone: true}" />
       </div>
       <div class="row justify-content-end">
-        <button type="reset" class="btn btn-danger mr-2">Cancel</button>        
+        <button type="reset" class="btn btn-danger mr-2">Cancel</button>
         <button type="submit" class="btn btn-primary ">Post</button>
       </div>
     </form>
