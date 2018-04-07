@@ -1,0 +1,18 @@
+#foto, #feed {
+    background-color: white;
+    padding-top: 20px;
+    height: 800px;
+}
+
+#feed {
+    border-left: 1px solid #666;
+}
+
+.row {
+    margin: 0;
+}
+
+#post {
+    border: 1px solid #666;
+    border-radius: 10px;
+}

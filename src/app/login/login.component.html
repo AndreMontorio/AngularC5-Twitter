@@ -1,0 +1,46 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h5 class="modal-title" id="modalLoginTitulo">Entre na Sua Conta</h5>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" class="form-control" id="txtUsuario" name="Usuario" [(ngModel)]="dataSource.Usuario">
+        </div>
+        <div class="form-group">
+          <label for="loginSenha">Senha</label>
+          <input type="password" class="form-control" id="txtSenha" name="Senha" [(ngModel)]="dataSource.Senha">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar na Conta</button>
+        <small class="form-text text-muted">Esqueceu a senha?
+          <a href="#">Clique aqui</a>.</small>
+      </form>
+    </div>
+    <div class="row" *ngIf="authError">
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">Erro na autenticação</div>
+      </div>
+    </div>
+</ng-template>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top py-3 box-shadow">
+  <a class="navbar-brand">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Twitter_logo.svg/2000px-Twitter_logo.svg.png" alt="twitter">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="open(content)">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-outline-primary ml-md-2" href="">Inscreva-se</a>
+      </li>
+    </ul>
+  </div>
+</nav>
